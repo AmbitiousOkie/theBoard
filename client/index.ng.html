@@ -1,1 +1,7 @@
-<p>Nothing here</p>
+<div ng-controller="jobListCtrl">
+  <ul>
+    <li ng-repeat="job in jobs">
+      <strong>{{job.name}}</strong> - {{job.description}}
+    </li>
+  </ul>
+</div>
