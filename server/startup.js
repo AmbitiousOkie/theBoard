@@ -2,16 +2,16 @@ Meteor.startup(function () {
 	if (Jobs.find().count() === 0) {
 		var jobs = [
 	      {
-	        'name': 'Kris',
-	        'description': 'Meteor/Angular.'
+	        'name': 'Oseberg',
+	        'description': 'Meteor/Angular designer.'
 	      },
 	      {
-	        'name': 'Austin',
-	        'description': 'Dev Ops'
+	        'name': 'Nodecraft',
+	        'description': 'Dev Ops Duder'
 	      },
 	      {
-	        'name': 'Phil',
-	        'description': 'Professional Button Pusher'
+	        'name': 'Tailwind',
+	        'description': 'PHP job here'
 	      }
 	    ];
 
