@@ -1,0 +1,15 @@
+<form>
+  <label>Name</label>
+  <input ng-model="newJob.name">
+  <label>Description</label>
+  <input ng-model="newJob.description">
+  <button ng-click="jobs.push(newJob)">Add</button>
+  <button ng-click="removeAll()">Remove All</button>
+</form>
+<ul>
+  <li ng-repeat="job in jobs">
+    <a href="/jobs/{{job._id}}">{{job.name}}</a>
+    <p>{{job.description}}</p>
+    <button ng-click="remove(job)">X</button>
+  </li>
+</ul>

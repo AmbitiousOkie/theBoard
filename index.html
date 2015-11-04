@@ -1,3 +1,14 @@
-<body ng-app="theBoard">
-  <div ng-include="'client/index.ng.html'"></div>
+<head>
+  <base href="/">
+</head>
+<body>
+ 
+<div ng-app="theBoard" ng-strict-di="">
+  <h1>
+    <a href="/jobs">Jobs</a>
+  </h1>
+ 
+  <div ui-view></div>
+</div>
+ 
 </body>
