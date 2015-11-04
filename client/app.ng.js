@@ -12,7 +12,7 @@ if (Meteor.isClient) {
           controller: 'JobsListCtrl'
         })
         .state('jobDetails', {
-          url: '/jobs/:jobId',
+          url: '/job/:jobId',
           templateUrl: 'client/job-details.ng.html',
           controller: 'JobDetailsCtrl'
         });
@@ -48,7 +48,7 @@ if (Meteor.isClient) {
     };
 
     $scope.debug = function() {
-      console.log($scope.job.name);
+      console.log($scope.job.company);
     }
   });
 }

@@ -1,16 +1,16 @@
 <div class="container">
   <form>
     <label>Name</label>
-    <input ng-model="newJob.name">
+    <input ng-model="newJob.company">
     <label>Description</label>
-    <input ng-model="newJob.description">
+    <input ng-model="newJob.position">
     <button ng-click="jobs.push(newJob)">Add</button>
     <button ng-click="removeAll()">Remove All</button>
   </form>
   <ul>
     <li ng-repeat="job in jobs">
       <span>
-        <strong><a href="/jobs/{{job._id}}">{{job.position}}</a></strong> - {{job.company}}
+        <strong><a href="/job/{{job._id}}">{{job.position}}</a></strong> - {{job.company}}
         <button ng-click="remove(job)">X</button>
       </span>
     </li>
