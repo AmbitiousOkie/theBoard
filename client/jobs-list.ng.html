@@ -10,7 +10,7 @@
   <ul>
     <li ng-repeat="job in jobs">
       <span>
-        <strong><a href="/jobs/{{job._id}}">{{job.name}}</a></strong> - {{job.description}}
+        <strong><a href="/jobs/{{job._id}}">{{job.position}}</a></strong> - {{job.company}}
         <button ng-click="remove(job)">X</button>
       </span>
     </li>
