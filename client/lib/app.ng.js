@@ -1,0 +1,1 @@
+angular.module('theBoard', ['angular-meteor', 'ui.router']);
