@@ -1,3 +1,13 @@
+// angular.module("theBoard").run(function ($rootScope, $state) {
+//   $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
+//     // We can catch the error thrown when the $requireUser promise is rejected
+//     // and redirect the user back to the main page
+//     if (error === 'AUTH_REQUIRED') {
+//       $state.go('jobs');
+//     }
+//   });
+// });
+
 angular.module('theBoard').config(function ($urlRouterProvider, $stateProvider, $locationProvider){
 
   $locationProvider.html5Mode(true);
@@ -6,7 +16,12 @@ angular.module('theBoard').config(function ($urlRouterProvider, $stateProvider, 
     .state('jobs', {
       url: '/jobs',
       templateUrl: 'client/jobs/views/jobs-list.ng.html',
-      controller: 'JobsListCtrl'
+      controller: 'JobsListCtrl',
+      resolve: {
+        "currentUser": function ($meteor) {
+          return $meteor.requireUser();
+        }
+      }
     })
     .state('jobDetails', {
       url: '/job/:jobId',

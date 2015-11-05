@@ -4,9 +4,12 @@
 <body>
  
 <div ng-app="theBoard" ng-strict-di="" class="container">
-  <h1>
-    <a href="/jobs">Jobs</a>
-  </h1>
+
+	<blaze-template name="loginButtons"></blaze-template>
+
+	<h1>
+		<a href="/jobs">Jobs</a>
+	</h1>
  
   <div ui-view></div>
 </div>
