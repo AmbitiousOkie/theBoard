@@ -9,11 +9,12 @@
   </form> -->
 
   <button ng-show="!loggedIn" ui-sref="post">Post</button>
+
   <ul>
     <li ng-repeat="job in jobs">
       <span>
         <strong><a href="/job/{{job._id}}">{{job.position}}</a></strong> - {{job.company}}
-        <button ng-click="remove(job)">X</button>
+        <button ng-click="remove(job)" ng-show="$root.currentUser">X</button>
       </span>
     </li>
   </ul>
