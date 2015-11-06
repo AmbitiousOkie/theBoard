@@ -16,18 +16,25 @@ angular.module('theBoard').config(function ($urlRouterProvider, $stateProvider, 
     .state('jobs', {
       url: '/jobs',
       templateUrl: 'client/jobs/views/jobs-list.ng.html',
-      controller: 'JobsListCtrl',
+      controller: 'JobsListCtrl'
+      }
+    )
+    .state('jobDetails', {
+      url: '/job/:jobId',
+      templateUrl: 'client/jobs/views/job-details.ng.html',
+      controller: 'JobDetailsCtrl'
+    })
+    .state('post', {
+      url: '/post',
+      templateUrl: 'client/jobs/views/job-post.ng.html',
+      controller: 'JobPostCtrl',
       resolve: {
         "currentUser": function ($meteor) {
           return $meteor.requireUser();
         }
       }
     })
-    .state('jobDetails', {
-      url: '/job/:jobId',
-      templateUrl: 'client/jobs/views/job-details.ng.html',
-      controller: 'JobDetailsCtrl'
-    });
+    ;
 
   $urlRouterProvider.otherwise("/jobs");
 });

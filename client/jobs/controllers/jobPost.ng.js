@@ -1,4 +1,4 @@
-  angular.module("theBoard").controller("JobDetailsCtrl", function($scope, $stateParams, $meteor) {
+  angular.module("theBoard").controller("JobPostCtrl", function($scope, $stateParams, $meteor) {
     $scope.job = $meteor.object(Jobs, $stateParams.jobId, false);
     $scope.jobs = $meteor.collection(Jobs).subscribe('jobs');
 

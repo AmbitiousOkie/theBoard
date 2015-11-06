@@ -1,0 +1,24 @@
+<h2>Post a job</h2>
+
+<form>
+	<label>Company: </label>
+	<input ng-model="newJob.company">
+	<label>Position: </label>
+	<input ng-model="newJob.position">
+	<label>Public: </label>
+	<input type="checkbox" ng-model="newJob.public">
+</form>
+
+<div class="form-group" style="margin-top: 20px">
+  <label>Details:</label>
+  <textarea class="form-control" rows="5" id="comment" placeholder="Job details" ng-model="newJob.details"></textarea>
+</div>
+
+<span>
+	<button ng-click="newJob.owner=$root.currentUser._id; jobs.save(newJob)" ui-sref="jobs">Submit</button>
+	<button ng-click="newJob.details=''; newJob.company=''; newJob.public=false;">Clear</button>
+	<button ui-sref="jobs">Cancel</button>
+</span>
+
+
+
