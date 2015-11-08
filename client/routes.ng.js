@@ -34,6 +34,16 @@ angular.module('theBoard').config(function ($urlRouterProvider, $stateProvider, 
         }
       }
     })
+    .state('jobEdit', {
+      url: '/jobEdit/:jobId',
+      templateUrl: 'client/jobs/views/job-edit.ng.html',
+      controller: 'JobEditCtrl',
+      resolve: {
+        "currentUser": function ($meteor) {
+          return $meteor.requireUser();
+        }
+      }
+    })
     ;
 
   $urlRouterProvider.otherwise("/jobs");

@@ -1,19 +1,11 @@
 <div class="container">
-<!--   <form>
-    <label>Company:</label>
-    <input ng-model="newJob.company">
-    <label>Position:</label>
-    <input ng-model="newJob.position">
-    <button ng-click="newJob.owner=$root.currentUser._id; jobs.save(newJob)">Add</button>
-    <button ng-click="removeAll()">Remove All</button>
-  </form> -->
 
-  <button ng-show="!loggedIn" ui-sref="post">Post</button>
-
+<h1>Jobs</h1>
   <ul>
-    <li ng-repeat="job in jobs">
+    <li ng-repeat="job in jobs | filter:jobSearch">
       <span>
-        <strong><a href="/job/{{job._id}}">{{job.position}}</a></strong> - {{job.company}}
+        <strong><a href="/job/{{job._id}}">{{job.position}}</a></strong> - {{job.company}} -- 
+        <strong><a href="/jobEdit/{{job._id}}" ng-show="$root.currentUser">Edit</a></strong>
         <button ng-click="remove(job)" ng-show="$root.currentUser">X</button>
       </span>
     </li>
